@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const dbSeeder = async (seedData, apiUrl) => {
+module.exports.dbSeeder = async (seedData, apiUrl) => {
     try {
         for (let item of seedData) {
             const postreq = await axios.post(apiUrl, item)
@@ -11,5 +11,3 @@ const dbSeeder = async (seedData, apiUrl) => {
         console.error(error.message)
     }
 }
-
-module.exports = dbSeeder
